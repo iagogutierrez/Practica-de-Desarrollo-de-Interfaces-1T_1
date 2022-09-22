@@ -19,7 +19,7 @@ public class GUI {
         marco.setSize(390, 300);
         marco.setLocation(500, 350);
 
-        JPanel panel1 = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel panel1 = new JPanel();
         //panel1.setBackground(Color.lightGray);
 
         JPanel panel2 = new JPanel();
@@ -58,6 +58,7 @@ public class GUI {
         JTextField statusscrollbar = new JTextField("50", 2);
         statusscrollbar.setEditable(false);
 
+
         panel2.add(tScrollbar);
         panel2.add(scrollbar);
         panel2.add(statusscrollbar);
@@ -84,15 +85,16 @@ public class GUI {
 
         // SPINNER FECHA DESGLOSADA
 
-        JLabel texto_spinner2 = new JLabel("Spinner Fecha Desglobada");
+        JLabel texto_spinner2 = new JLabel("Spinner Fecha Desglobada", SwingConstants.LEFT);
 
         SpinnerModel Spinner_dia = new SpinnerNumberModel(Calendar.getInstance().get(Calendar.DATE), 1,31,1);
         JSpinner Spinner1 = new JSpinner(Spinner_dia);
 
-        String months[] = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
-        SpinnerModel Spinner_mes = new SpinnerListModel(Collections.singletonList(((months[calendar.get(Calendar.MONTH)]))));
-        JSpinner Spinner2 = new JSpinner(Spinner_mes);
-        Spinner2.setPreferredSize(new Dimension(90,20));
+        SpinnerModel model = new SpinnerDateModel();
+        JSpinner spinner_mes = new JSpinner(model);
+        JComponent editor = new JSpinner.DateEditor(spinner_mes, "MMMM");
+        spinner_mes.setEditor(editor);
+
 
         SpinnerModel Spinner_anio = new SpinnerNumberModel(Calendar.getInstance().get(Calendar.YEAR),null,null,1);
         JSpinner Spinner3 = new JSpinner(Spinner_anio);
@@ -100,7 +102,7 @@ public class GUI {
 
         panel4.add(texto_spinner2);
         panel4.add(Spinner1);
-        panel4.add(Spinner2);
+        panel4.add(spinner_mes);
         panel4.add(Spinner3);
 
         // AÑADIR AL MARCO
