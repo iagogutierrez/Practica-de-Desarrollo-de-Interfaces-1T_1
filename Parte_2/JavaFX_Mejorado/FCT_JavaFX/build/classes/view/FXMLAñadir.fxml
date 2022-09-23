@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="976.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.FXMLAñadirController">
+   <children>
+      <Label fx:id="LAB_CodEmpresa" layoutX="60.0" layoutY="30.0" text="Código Empresa" />
+      <JFXTextField fx:id="TF_CodEmpresa" layoutX="180.0" layoutY="30.0" prefHeight="25.0" prefWidth="100.0" promptText="xxxxx" />
+      <Label fx:id="LAB_CIF" layoutX="60.0" layoutY="70.0" text="CIF" />
+      <JFXTextField fx:id="TF_CIF" layoutX="180.0" layoutY="70.0" prefHeight="25.0" prefWidth="233.0" />
+      <Label fx:id="LAB_Nombre" layoutX="60.0" layoutY="110.0" text="Nombre" />
+      <JFXTextField fx:id="TF_Nombre" layoutX="180.0" layoutY="110.0" prefHeight="25.0" prefWidth="233.0" />
+      <Label fx:id="LAB_Direcc" layoutX="60.0" layoutY="150.0" text="Dirección" />
+      <JFXTextField fx:id="TF_Direcc" layoutX="180.0" layoutY="150.0" prefHeight="25.0" prefWidth="233.0" />
+      <Label fx:id="LAB_Localidad" layoutX="60.0" layoutY="190.0" text="Localidad" />
+      <JFXTextField fx:id="TF_Localidad" layoutX="180.0" layoutY="190.0" prefHeight="25.0" prefWidth="233.0" />
+      <Label fx:id="LAB_CodPostal" layoutX="60.0" layoutY="230.0" text="C.P." />
+      <JFXTextField fx:id="TF_CodPostal" layoutX="180.0" layoutY="230.0" prefHeight="25.0" prefWidth="100.0" />
+      <Label fx:id="LAB_Jornada" layoutX="60.0" layoutY="270.0" text="Jornada" />
+      <JFXComboBox fx:id="CB_Jornada" layoutX="180.0" layoutY="270.0" />
+      <Label fx:id="LAB_Modalidad" layoutX="60.0" layoutY="310.0" text="Modalidad" />
+      <JFXComboBox fx:id="CB_Modalidad" layoutX="180.0" layoutY="310.0" />
+      <Label fx:id="LAB_mail" layoutX="60.0" layoutY="350.0" text="eMail" AnchorPane.bottomAnchor="33.0" AnchorPane.topAnchor="350.0" />
+      <JFXTextField fx:id="TF_mail" layoutX="180.0" layoutY="350.0" prefHeight="25.0" prefWidth="233.0" />
+      <Line endX="-100.0" endY="350.0" layoutX="550.0" layoutY="30.0" startX="-100.0" startY="-10.0" />
+      <Label fx:id="LAB_DnirepLEGAL" layoutX="480.0" layoutY="47.0" text="DNI Rep. Legal" />
+      <JFXTextField fx:id="TF_DnirepLEGAL" layoutX="618.0" layoutY="43.0" />
+      <Label fx:id="LAB_NombRL" layoutX="480.0" layoutY="87.0" text="Nombre RL" />
+      <JFXTextField fx:id="TF_NombRL" layoutX="605.0" layoutY="83.0" />
+      <Label fx:id="LAB_ApelliRL" layoutX="480.0" layoutY="127.0" text="Apellidos RL" />
+      <JFXTextField fx:id="TF_ApelliRL" layoutX="605.0" layoutY="123.0" />
+      <Label fx:id="LAB_DnirepLaboral" layoutX="480.0" layoutY="167.0" text="DNI Tutor Laboral" />
+      <Label fx:id="LAB_NombTL" layoutX="480.0" layoutY="207.0" text="Nombre TL" />
+      <Label fx:id="LAB_ApelliTL" layoutX="480.0" layoutY="247.0" text="Apellido TL" />
+      <Label fx:id="LAB_TflTL" layoutX="480.0" layoutY="287.0" text="Tlfn. TL" />
+   </children>
+</AnchorPane>
