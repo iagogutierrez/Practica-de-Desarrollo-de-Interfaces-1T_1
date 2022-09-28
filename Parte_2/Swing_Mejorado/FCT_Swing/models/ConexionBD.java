@@ -29,7 +29,7 @@ public class ConexionBD {
     }
 
     public ConexionBD() {
-        url = "jdbc:mysql://localhost:3305/bdgestionfct" ;
+        url = "jdbc:mysql://localhost:3306/bdgestionfct" ;
         user = "root";
         pass= "root";
         System.out.println("conectado");

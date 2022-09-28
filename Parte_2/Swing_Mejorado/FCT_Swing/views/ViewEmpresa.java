@@ -90,9 +90,9 @@ public class ViewEmpresa extends JFrame {
 
         // Título principal del programa
         lTitulo = new JLabel("GESTIÓN DE DATOS DE EMPRESAS");
-        lTitulo.setFont(new Font("Arial", Font.BOLD, 22));
+        lTitulo.setFont(new Font("Arial", Font.BOLD, 20));
         lTitulo.setForeground(Color.white);
-        pTitulo = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 15));
+        pTitulo = new JPanel(new FlowLayout(FlowLayout.CENTER, 15,10 ));
         pTitulo.add(lTitulo);
 
         // Elementos del panel para los datos de las empresas
@@ -257,6 +257,7 @@ public class ViewEmpresa extends JFrame {
         // Subpanel superior para personas
 
         lRepLegal = new JLabel("DATOS DEL REPRESENTANTE LEGAL");
+        lRepLegal.setFont(new Font("Arial", Font.BOLD, 10));
 
         lDniRepLegal = new JLabel("DNI Rep. Legal: ");
         tfDniRepLegal = new JTextField();
@@ -300,6 +301,7 @@ public class ViewEmpresa extends JFrame {
         pPersonasMid3 = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 7));
 
         lTutLegal = new JLabel("DATOS DEL REPRESENTANTE LEGAL");
+        lTutLegal.setFont(new Font("Arial", Font.BOLD, 10));
 
         lDniTutLaboral = new JLabel("DNI Tut. Laboral: ");
         tfDniTutLaboral = new JTextField();
@@ -321,7 +323,7 @@ public class ViewEmpresa extends JFrame {
         tfTelefonoTL = new JTextField();
         tfTelefonoTL.setBorder(bordeTextos);
         tfTelefonoTL.setPreferredSize(new Dimension(120,20));
-        lTelefonoTL.setBorder(new EmptyBorder(0,0,0,35));
+        lTelefonoTL.setBorder(new EmptyBorder(0,0,0,36));
 
         // SubPanel Inferior 1 (Tutor Legal)
         pPersonasMid1.add(lTutLegal);
@@ -349,11 +351,18 @@ public class ViewEmpresa extends JFrame {
         pPersonas.add(pPersonasMid, BorderLayout.CENTER);
 
         // Panel para los botones de insertar, modificar y eliminar
-        pBotones = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        pBotones = new JPanel();
+        //GridLayout(3,1
         // Se ajustan las características para el panel de botones
-        pBotones.setBorder(BorderFactory.createCompoundBorder
-                (BorderFactory.createEmptyBorder(10,330,10,330), BorderFactory.createBevelBorder(BevelBorder.LOWERED)));
+        /*Border bordeBotones = BorderFactory.createTitledBorder(
+                bordeBlanco, " ",
+                TitledBorder.LEFT, TitledBorder.DEFAULT_POSITION);
+        pBotones.setBorder(BorderFactory.createCompoundBorder(bordeBotones, BorderFactory.createEmptyBorder(0,0,10,0)));*/
+
         //pBotones.setSize(new Dimension(330, 250));
+        Color color = new Color(0,0,0,00);
+
+        pBotones.setBorder(BorderFactory.createMatteBorder(0,0,10,0,color));
 
         // Se crean y añaden los botones al panel
         bInsert = new JButton("Insertar");
@@ -375,27 +384,29 @@ public class ViewEmpresa extends JFrame {
         pTablaBaseDatos.setPreferredSize(new Dimension(500, 900));
 
         // Se crean los paneles principales de la aplicación
-        pPrincipal = new JPanel(new BorderLayout(5,15));
+        pPrincipal = new JPanel(new BorderLayout(5,0));
         pPrincipalPrimero = new JPanel(new BorderLayout(5,15));
         pPrincipalPrimero.setPreferredSize(new Dimension(500,535));
 
         pPrincipalSegundo = new JPanel(new BorderLayout(5,10));
+        pPrincipalSegundo.setPreferredSize(new Dimension(400,50));
 
-        pPrincipalTabla = new JPanel(new BorderLayout(5,15));
+        pPrincipalTabla = new JPanel(new BorderLayout(5,10));
         pPrincipalTabla.setPreferredSize(new Dimension(500,535));
         pPrincipalTabla.add(pTablaBaseDatos);
 
         // Se añaden los paneles correspondientes al panel secundario, que irá introducido en el panel principal
-        pPrincipalSegundo.add(pPersonas, BorderLayout.NORTH);
-        pPrincipalSegundo.add(pBotones, BorderLayout.CENTER);
+        //pPrincipalSegundo.add(pPersonas, BorderLayout.NORTH);
+        pPrincipalSegundo.add(pBotones, BorderLayout.SOUTH);
 
         // Se añade el título, el panel de empresa y el panel secundario al panel principal
         pPrincipalPrimero.add(pDatosEmpresa, BorderLayout.NORTH);
-        pPrincipalPrimero.add(pPrincipalSegundo, BorderLayout.CENTER);
+        pPrincipalPrimero.add(pPersonas, BorderLayout.CENTER);
 
         pPrincipal.add(pTitulo,BorderLayout.NORTH);
         pPrincipal.add(pPrincipalPrimero,BorderLayout.WEST);
         pPrincipal.add(pPrincipalTabla,BorderLayout.EAST);
+        pPrincipal.add(pPrincipalSegundo,BorderLayout.SOUTH);
 
         // Se crea el panel para las pestañas superiores
         pPestanias = new JTabbedPane(JTabbedPane.TOP);
@@ -411,12 +422,10 @@ public class ViewEmpresa extends JFrame {
         pPestanias.add("Asignación", viewAsignacion);
 
 
-
-
         add(pPestanias, BorderLayout.NORTH);
         setTitle("Programa FCT Centro Educativo");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(new Dimension(1015, 680));
+        setSize(new Dimension(1015, 700));
         setLocation(190, 35);
         setResizable(false);
         setVisible(true);
