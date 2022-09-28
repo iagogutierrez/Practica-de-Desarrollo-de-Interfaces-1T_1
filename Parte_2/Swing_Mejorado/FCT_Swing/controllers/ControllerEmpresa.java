@@ -72,12 +72,12 @@ public class ControllerEmpresa {
                         setStatement(ps);
 
                         if (ps.executeUpdate() == 1) {
-                            JOptionPane.showMessageDialog(viewEmpresa.pPrincipalPrimero, "Empresa registrada correctamente");
+                            JOptionPane.showMessageDialog(viewEmpresa.pPrincipal, "Empresa registrada correctamente");
                             controllerTablaEmpresa();
                             ControllerAsignacion.datosEmpresa();
                             setDefaultTFs();
                         } else {
-                            JOptionPane.showMessageDialog(viewEmpresa.pPrincipalPrimero, ("No se ha podido registrar la empresa"));
+                            JOptionPane.showMessageDialog(viewEmpresa.pPrincipal, ("No se ha podido registrar la empresa"));
                         }
                         controllerTablaEmpresa();
                         ps.close();
@@ -108,11 +108,11 @@ public class ControllerEmpresa {
                     System.out.println(ps);
 
                     if (ps.executeUpdate() == 1) {
-                        JOptionPane.showMessageDialog(viewEmpresa.pPrincipalPrimero, "Empresa modificada correctamente");
+                        JOptionPane.showMessageDialog(viewEmpresa.pPrincipal, "Empresa modificada correctamente");
                         controllerTablaEmpresa();
                         setDefaultTFs();
                     } else {
-                        JOptionPane.showMessageDialog(viewEmpresa.pPrincipalPrimero, ("No se ha podido modificar la empresa"));
+                        JOptionPane.showMessageDialog(viewEmpresa.pPrincipal, ("No se ha podido modificar la empresa"));
                     }
                     controllerTablaEmpresa();
                     ps.close();
@@ -137,11 +137,11 @@ public class ControllerEmpresa {
                     ps.setString(1, viewEmpresa.tfCodEmpresa.getText());
 
                     if (ps.executeUpdate() == 1) {
-                        JOptionPane.showMessageDialog(viewEmpresa.pPrincipalPrimero, "Empresa eliminada correctamente");
+                        JOptionPane.showMessageDialog(viewEmpresa.pPrincipal, "Empresa eliminada correctamente");
                         controllerTablaEmpresa();
                         setDefaultTFs();
                     } else {
-                        JOptionPane.showMessageDialog(viewEmpresa.pPrincipalPrimero, ("No se ha podido eliminar la empresa"));
+                        JOptionPane.showMessageDialog(viewEmpresa.pPrincipal, ("No se ha podido eliminar la empresa"));
                     }
                     controllerTablaEmpresa();
                     ps.close();
@@ -176,7 +176,7 @@ public class ControllerEmpresa {
 
     public void controllerTabbedPane() {
         viewEmpresa.pPestanias.addChangeListener(e -> {
-            if (viewEmpresa.pPrincipalPrimero.isVisible()) {
+            if (viewEmpresa.pPrincipal.isVisible()) {
                 viewEmpresa.setSize(new Dimension(1015, 680));
                 viewEmpresa.pPestanias.setPreferredSize(new Dimension(1015, 641));
             } else {
@@ -190,14 +190,18 @@ public class ControllerEmpresa {
         try {
             viewEmpresa.pTablaBaseDatos.removeAll();
             Empresa empresa = new Empresa();
+
+            // Atributos
             viewEmpresa.tBaseDatos = new JTable(empresa.getTablaProducto(cbd));
-            viewEmpresa.tBaseDatos.getColumnModel().getColumn(0).setPreferredWidth(30);
-            viewEmpresa.tBaseDatos.getColumnModel().getColumn(1).setPreferredWidth(30);
+
+            // columnas
+            viewEmpresa.tBaseDatos.getColumnModel().getColumn(0).setPreferredWidth(80);
+            viewEmpresa.tBaseDatos.getColumnModel().getColumn(1).setPreferredWidth(80);
             viewEmpresa.tBaseDatos.getColumnModel().getColumn(2).setPreferredWidth(80);
-            viewEmpresa.tBaseDatos.getColumnModel().getColumn(3).setPreferredWidth(20);
-            viewEmpresa.tBaseDatos.getColumnModel().getColumn(4).setPreferredWidth(70);
-            viewEmpresa.tBaseDatos.getColumnModel().getColumn(5).setPreferredWidth(50);
-            viewEmpresa.tBaseDatos.getColumnModel().getColumn(6).setPreferredWidth(60);
+            viewEmpresa.tBaseDatos.getColumnModel().getColumn(3).setPreferredWidth(35);
+            viewEmpresa.tBaseDatos.getColumnModel().getColumn(4).setPreferredWidth(85);
+            viewEmpresa.tBaseDatos.getColumnModel().getColumn(5).setPreferredWidth(80);
+            viewEmpresa.tBaseDatos.getColumnModel().getColumn(6).setPreferredWidth(100);
             viewEmpresa.tBaseDatos.getColumnModel().getColumn(7).setPreferredWidth(90);
 
 
@@ -241,9 +245,10 @@ public class ControllerEmpresa {
                 }
             });
 
-            viewEmpresa.tablaEmpresa = new JScrollPane(viewEmpresa.tBaseDatos);
-            viewEmpresa.tablaEmpresa.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-            viewEmpresa.tablaEmpresa.setPreferredSize(new Dimension(960, 110));
+            viewEmpresa.tablaEmpresa = new JScrollPane(viewEmpresa.tBaseDatos, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+            viewEmpresa.tBaseDatos.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+            //viewEmpresa.tablaEmpresa.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+            viewEmpresa.tablaEmpresa.setPreferredSize(new Dimension(450, 490));
             viewEmpresa.pTablaBaseDatos.add(viewEmpresa.tablaEmpresa);
             viewEmpresa.pTablaBaseDatos.updateUI();
         } catch (Exception x) {
