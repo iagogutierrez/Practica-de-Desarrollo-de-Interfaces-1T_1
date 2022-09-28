@@ -14,7 +14,7 @@ public class ViewAlumnos extends JPanel {
 
     public ViewAlumnos() {
 
-        setSize(new Dimension(620, 340));
+        setSize(new Dimension(1015, 700));
 
 
         // Panel main
@@ -34,13 +34,13 @@ public class ViewAlumnos extends JPanel {
         // Panel medio
         JPanel panelmedio = new JPanel();
 
-        panelmedio.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10,5,10,5), BorderFactory.createBevelBorder(BevelBorder.LOWERED)));
+        panelmedio.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(1,1,1,1), BorderFactory.createBevelBorder(BevelBorder.LOWERED)));
 
         boton = new JButton();
-        JLabel imagen=new JLabel(new ImageIcon("DATaTabla.png"));
+        JLabel imagen=new JLabel(new ImageIcon("img/DATaTabla.png"));
         boton.add(imagen);
         JPanel panelBoton = new JPanel();
-        panelBoton.setBorder(BorderFactory.createEmptyBorder(10,0,10,0));
+        panelBoton.setBorder(BorderFactory.createEmptyBorder(1,1,1,1));
         panelBoton.add(boton);
         panelmedio.add(panelBoton);
         add(panelmedio, BorderLayout.CENTER);
@@ -48,8 +48,10 @@ public class ViewAlumnos extends JPanel {
         // Panel inferior
         JPanel panelinferior = new JPanel();
 
+        JTable
 
-        texto = new JLabel("      Información del fichero ahora registrada en la tabla Alumnos      ");
+
+        texto = new JLabel("Información del fichero ahora registrada en la tabla Alumnos");
         Font fuente2 = new Font("ARIAL", 1, 15);
         texto.setFont(fuente2);
         Color Colortextoinferior = new Color(153, 204, 102);

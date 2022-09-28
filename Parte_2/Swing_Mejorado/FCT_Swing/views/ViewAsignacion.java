@@ -23,7 +23,7 @@ public class ViewAsignacion extends JPanel {
 
     public ViewAsignacion(){
         super();
-        setSize(620, 340);
+        setSize(1015, 700);
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         // Título

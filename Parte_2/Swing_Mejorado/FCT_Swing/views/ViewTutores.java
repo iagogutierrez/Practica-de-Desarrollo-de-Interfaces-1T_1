@@ -15,7 +15,7 @@ public class ViewTutores extends JPanel {
 
     public ViewTutores() {
         super();
-        setSize(620, 340);
+        setSize(1015, 700);
 
         // Panel main
         this.setLayout(new BorderLayout());
@@ -33,11 +33,11 @@ public class ViewTutores extends JPanel {
 
         // Panel medio
         JPanel panelmedio = new JPanel();
-        panelmedio.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10,5,10,5), BorderFactory.createBevelBorder(BevelBorder.LOWERED)));
+        panelmedio.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(1,1,1,1), BorderFactory.createBevelBorder(BevelBorder.LOWERED)));
         JPanel panelBoton = new JPanel();
-        panelBoton.setBorder(BorderFactory.createEmptyBorder(10,0,10,0));
+        panelBoton.setBorder(BorderFactory.createEmptyBorder(1,1,1,1));
         boton = new JButton();
-        JLabel imagen = new JLabel(new ImageIcon("XMLaTabla.png"));
+        JLabel imagen = new JLabel(new ImageIcon("img/XMLaTabla.png"));
         boton.add(imagen);
 
         panelBoton.add(boton);

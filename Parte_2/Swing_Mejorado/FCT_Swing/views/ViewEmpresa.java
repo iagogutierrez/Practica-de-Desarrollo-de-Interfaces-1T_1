@@ -360,7 +360,7 @@ public class ViewEmpresa extends JFrame {
         pBotones.setBorder(BorderFactory.createCompoundBorder(bordeBotones, BorderFactory.createEmptyBorder(0,0,10,0)));*/
 
         //pBotones.setSize(new Dimension(330, 250));
-        Color color = new Color(0,0,0,00);
+        Color color = new Color(0,0,0, 0);
 
         pBotones.setBorder(BorderFactory.createMatteBorder(0,0,10,0,color));
 
